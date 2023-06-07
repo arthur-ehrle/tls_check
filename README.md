@@ -14,7 +14,7 @@ You can add other urls that you will want to monitor by putting the associated p
 port: 7790
 scrape_frequency: 1 \
 label : "TLS_expiration_date" \
-url_list : \
+url_list : 
   - link : "github.com" \
     port : 443
  

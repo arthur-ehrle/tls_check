@@ -7,6 +7,7 @@ import datetime
 import time
 import OpenSSL
 import ssl
+import calendar
 
 
 url_list=[]
@@ -41,7 +42,9 @@ def check(url,port):
     timestamp = bytes.decode('utf-8')
 
     timestamp= datetime.datetime.strptime(timestamp, '%Y%m%d%H%M%S%z').date().isoformat()
-    timestamp =time.mktime(datetime.datetime.strptime(timestamp, "%Y-%m-%d").timetuple())
-
+    print(url+":"+timestamp)
+    timestamp =calendar.timegm(datetime.datetime.strptime(timestamp, "%Y-%m-%d").timetuple())
+    print(timestamp)
+    
     return timestamp
 
